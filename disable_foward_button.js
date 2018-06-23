@@ -1,4 +1,5 @@
-//Stackoverflow answer url: https://stackoverflow.com/questions/11548558/html5-history-disabling-forward-button/51001411#51001411
+//Stackoverflow answer url: 
+// https://stackoverflow.com/questions/11548558/html5-history-disabling-forward-button/51001411#51001411
 
 // disabling forward button without using an array
 (function() {
