@@ -1,8 +1,10 @@
 // disabling forward button without using an array
 (function() {
-  var flag = false;
-  var loop = false;
-
+  disableForwardButton();
+})();
+function disableForwardButton() {
+  var flag,
+    loop = false;
   window.addEventListener('popstate', function(event) {
     if (flag) {
       if (history.state != null && history.state.hasOwnProperty('page')) {
@@ -21,15 +23,10 @@
         null
       );
     }
-    if (loop) {
-      flag = true;
-    } else {
-      flag = !flag;
-    }
+    flag = loop ? true : !flag;
   });
 
-  window.onclick = function(e) {
-    // reseting flag
+  window.onclick = function(event) {
     flag = false;
   };
-})();
+}
