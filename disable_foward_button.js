@@ -2,13 +2,13 @@
 // https://stackoverflow.com/questions/11548558/html5-history-disabling-forward-button/51001411#51001411
 
 // disabling forward button without using an array
-(function() {
+(function () {
   disableForwardButton();
 })();
 function disableForwardButton() {
   var flag,
     loop = false;
-  window.addEventListener('popstate', function(event) {
+  window.addEventListener('popstate', function (event) {
     if (flag) {
       if (history.state != null && history.state.hasOwnProperty('page')) {
         loop = true;
@@ -29,7 +29,7 @@ function disableForwardButton() {
     flag = loop ? true : !flag;
   });
 
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     flag = false;
   };
 }

@@ -1,17 +1,17 @@
 // have to test with property which has an object as value (then this covers all cases);
-(function() {
+(function () {
   const paramSuffix = '/?';
   const infoMessage = 'Session Storage is empty, sign in!';
   const sessionStorageKey = 'wemocache';
 
-  window.onload = function() {
+  window.onload = function () {
     let htmlHrefElements = document.getElementsByTagName('a');
     var objStore = JSON.parse(sessionStorage.getItem(sessionStorageKey));
     if (objStore) {
       for (var i = 0; i < htmlHrefElements.length; i++) {
         htmlHrefElements[i].addEventListener(
           'click',
-          function(e) {
+          function (e) {
             e.preventDefault();
             let str = objectToUrlParam(objStore);
             str = str.substring(0, str.length);
