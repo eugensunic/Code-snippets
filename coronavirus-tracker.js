@@ -5,7 +5,7 @@ fetch('https://coronavirus-tracker-api.herokuapp.com/confirmed')
     }) => {
         const UK = locations.find(({
             country
-        }) => country === 'UK');
+        }) => country === 'United Kingdom');
         const result = coronaConfirmedCases(UK.history);
         console.table(result);
     }).catch(err => console.log('Error: ', err));
